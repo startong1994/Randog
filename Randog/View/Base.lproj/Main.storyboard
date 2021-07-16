@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,41 +16,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3HQ-Fp-rac">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ckf-fC-yO4">
                                 <rect key="frame" x="20" y="44" width="374" height="808"/>
-                            </imageView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="idX-PS-NqN">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items/>
-                            </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwg-AK-ZjW">
-                                <rect key="frame" x="20" y="825" width="374" height="40"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="arrow.clockwise" catalog="system"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="refreshButtomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6aI-AT-Mat"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3HQ-Fp-rac">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="557.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="557.5" id="EzL-l5-k2P"/>
+                                        </constraints>
+                                    </imageView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b0-LW-b8A">
+                                        <rect key="frame" x="0.0" y="557.5" width="374" height="216"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rvn-c6-xT5">
+                                        <rect key="frame" x="0.0" y="773.5" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Refresh"/>
+                                        <connections>
+                                            <action selector="refreshButtomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGy-7v-hKO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="cwg-AK-ZjW" secondAttribute="bottom" constant="31" id="4jE-Mo-7tw"/>
-                            <constraint firstItem="3HQ-Fp-rac" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G1k-Ik-i5m"/>
-                            <constraint firstItem="3HQ-Fp-rac" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G4R-j8-SFN"/>
-                            <constraint firstItem="3HQ-Fp-rac" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IJe-1d-q8L"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3HQ-Fp-rac" secondAttribute="trailing" constant="20" id="Rl9-eo-WrH"/>
-                            <constraint firstItem="3HQ-Fp-rac" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ULu-6V-12h"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cwg-AK-ZjW" secondAttribute="trailing" constant="20" id="Zy4-sj-qys"/>
-                            <constraint firstItem="cwg-AK-ZjW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="n6u-wf-C3O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ckf-fC-yO4" secondAttribute="bottom" constant="10" id="Eze-fe-GuE"/>
+                            <constraint firstItem="Ckf-fC-yO4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eqj-jH-fXt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ckf-fC-yO4" secondAttribute="trailing" constant="20" id="ez0-d8-bdn"/>
+                            <constraint firstItem="Ckf-fC-yO4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uOB-fJ-TfB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="3HQ-Fp-rac" id="4oN-xe-GfQ"/>
+                        <outlet property="pickerView" destination="1b0-LW-b8A" id="TBu-sp-ih0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -60,7 +59,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.clockwise" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

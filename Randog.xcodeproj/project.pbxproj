@@ -10,6 +10,7 @@
 		D2910A942697C52B008DCA94 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2910A932697C52B008DCA94 /* MainViewController.swift */; };
 		D2910A962697C86D008DCA94 /* DogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2910A952697C86D008DCA94 /* DogAPI.swift */; };
 		D2910A982697D516008DCA94 /* DogProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2910A972697D516008DCA94 /* DogProtocol.swift */; };
+		D29453AA26A09CF400E12452 /* BreedsListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29453A926A09CF400E12452 /* BreedsListProtocol.swift */; };
 		D2ADC00B2697C22800EE5797 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC00A2697C22800EE5797 /* AppDelegate.swift */; };
 		D2ADC00D2697C22800EE5797 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC00C2697C22800EE5797 /* SceneDelegate.swift */; };
 		D2ADC0122697C22800EE5797 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2ADC0102697C22800EE5797 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		D2910A932697C52B008DCA94 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D2910A952697C86D008DCA94 /* DogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPI.swift; sourceTree = "<group>"; };
 		D2910A972697D516008DCA94 /* DogProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogProtocol.swift; sourceTree = "<group>"; };
+		D29453A926A09CF400E12452 /* BreedsListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsListProtocol.swift; sourceTree = "<group>"; };
 		D2ADC0072697C22800EE5797 /* Randog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Randog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2ADC00A2697C22800EE5797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2ADC00C2697C22800EE5797 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				D2910A952697C86D008DCA94 /* DogAPI.swift */,
 				D2910A972697D516008DCA94 /* DogProtocol.swift */,
+				D29453A926A09CF400E12452 /* BreedsListProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				D2910A982697D516008DCA94 /* DogProtocol.swift in Sources */,
 				D2ADC00D2697C22800EE5797 /* SceneDelegate.swift in Sources */,
 				D2910A942697C52B008DCA94 /* MainViewController.swift in Sources */,
+				D29453AA26A09CF400E12452 /* BreedsListProtocol.swift in Sources */,
 				D2910A962697C86D008DCA94 /* DogAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

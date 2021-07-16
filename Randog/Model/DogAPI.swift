@@ -9,32 +9,56 @@ import UIKit
 
 
 class DogAPI {
-    enum Endpoint: String {
-        case randomDogImage = "https://dog.ceo/api/breeds/image/random"
+    enum Endpoint {
         
+        case randomDogImageFromAll
+        case randomImageFromBreed (String)
+        case breedsOfDog
+        
+    
         var url: URL{
-            return URL(string: self.rawValue)!
+            return URL(string: self.stringValue)!
+        }
+        
+        var stringValue: String{
+            switch self {
+            
+            case .randomDogImageFromAll:
+                return "https://dog.ceo/api/breeds/image/random"
+            case .randomImageFromBreed(let breed):
+                return "https://dog.ceo/api/breed/\(breed)/images/random"
+            case .breedsOfDog:
+                return "https://dog.ceo/api/breeds/list/all"
+            }
         }
     }
-    class func requestRandomImageAddress(completionHandler: @escaping(DogProtocol?, Error?) -> Void){
-        let randomImageEndpoint = Endpoint.randomDogImage.url
-        
-        let task = URLSession.shared.dataTask(with: randomImageEndpoint) { data, response, error in
+    class func requestRandomImageAddress(breed: String,completionHandler: @escaping(DogProtocol?, Error?) -> Void){
+        print("test point 2")
+        var randomImageEndPoint = Endpoint.randomDogImageFromAll.url
+        if breed != "All" {
+            randomImageEndPoint = Endpoint.randomImageFromBreed(breed).url
+        }
+
+        print(" test point (3)")
+        print(randomImageEndPoint)
+        let task = URLSession.shared.dataTask(with: randomImageEndPoint) { data, response, error in
             guard let data = data else{
                 completionHandler(nil,error)
                 return
             }
             let decoder = JSONDecoder()
             let imageData = try! decoder.decode(DogProtocol.self, from: data)
+            print(imageData.status)
             completionHandler(imageData, nil)
+            print("testpoint 5")
     }
         task.resume()
     }
     
     
-    
     // pass in the url, and then request image from url link
     class func requestImage(url: URL, completionHandler: @escaping(UIImage?, Error?) -> Void){
+        print("testpoint 4")
         let task = URLSession.shared.downloadTask(with: url) { url, response, error in
             guard let url = url else{
                 print(error!.localizedDescription + "x2")
@@ -46,4 +70,23 @@ class DogAPI {
         }
         task.resume()
     }
+    class func requestBreeds(completionHandler: @escaping([String], Error?) -> Void){
+        let breedsURL = Endpoint.breedsOfDog.url
+        let task = URLSession.shared.dataTask(with: breedsURL) { data, response, error in
+            guard let data = data else{
+                completionHandler([], error)
+                return
+            }
+            let decoder = JSONDecoder()
+            let breedsData = try! decoder.decode(BreedsListProtocol.self, from: data)
+            let breedsList = breedsData.message.keys.map({$0})
+            completionHandler(breedsList, nil)
+            
+        }
+        task.resume()
+    }
+    
+    
+    
+    
 }
